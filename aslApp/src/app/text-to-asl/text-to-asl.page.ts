@@ -6,9 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./text-to-asl.page.scss'],
 })
 export class TextToAslPage implements OnInit {
-
+  inputValue: string = "";
   constructor() { }
+  submit(){
+    console.log(this.inputValue);
 
+  }
   ngOnInit() {
   }
 

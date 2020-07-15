@@ -8,5 +8,8 @@
 </ion-header>
 
 <ion-content>
-
+  <ion-list style="text-align:center">
+    <ion-input [(ngModel)]="inputValue" text-right placeholder="What's on your mind?" style="text-align:center" id='input'></ion-input>
+    <ion-button color="medium" (click)="submit()">Translate</ion-button>
+  </ion-list>
 </ion-content>
