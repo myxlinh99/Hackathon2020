@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      ASL Translator
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div >
+    <h1 style="text-align: center;">ASL</h1>
+    <h1 style="text-align: center;">Translator 🔊</h1>
+    <img src="assets/bunny.jpeg" class="center">
+    <br>
+    <ion-button [routerLink]="['/asl-to-text']" class="center" color="light">ASL TO TEXT</ion-button>
+    <br>
+    <ion-button [routerLink]="['/text-to-asl']" class="center" color="light">TEXT TO ASL</ion-button>
+  </div>
+</ion-content>
