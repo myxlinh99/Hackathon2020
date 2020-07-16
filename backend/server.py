@@ -1,7 +1,7 @@
 import flask
 from flask import request, jsonify
 from videos.videos import translateString
-from predict.buildPic import findPicture
+from predict.buildPic import buildPicture
 from predict.predict import finalPredict
 
 app = flask.Flask(__name__)
@@ -24,7 +24,7 @@ def predict():
     else:
         return "Error: No image provided to API."
     
-    newimg = findPicture(img)
+    newimg = buildPicture()
 
     final = finalPredict(newimg)
     return jsonify(final)
