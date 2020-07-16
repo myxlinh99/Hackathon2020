@@ -13,7 +13,7 @@ def prepare(file):
 def makePredict(file):
     CATEGORIES = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J",
 	          "K", "L", "M", "N", "nothing", "O", "P", "Q", "R", "S", "space", "T", "U", "V", "W", "X", "Y", "Z"]
-    model = tf.keras.models.load_model("CNN.model")
+    model = tf.keras.models.load_model("predict/CNN.model")
     image = file #your image path
     image = prepare(image)
     prediction = model.predict([image])
