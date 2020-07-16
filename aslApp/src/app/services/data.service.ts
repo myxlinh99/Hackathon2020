@@ -6,7 +6,7 @@ import { HttpClient } from "@angular/common/http";
 })
 export class DataService {
     constructor (private http: HttpClient) {}
-    getRemoteData() {
-        return this.http.get("http://4f6be0348dee.ngrok.io/videos?text=hello")
+    getRemoteData(input) {
+        return this.http.get("https://cors-anywhere.herokuapp.com/ecf53f1909ef.ngrok.io/videos?text="+input)
     }
 }

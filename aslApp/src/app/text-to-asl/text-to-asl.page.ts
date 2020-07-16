@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from "../services/data.service";
-import { HttpClient } from "@angular/common/http";
+import { DataService } from "../services/data.service"; 
+import { VideoPlayer } from '@ionic-native/video-player/ngx';
+import { ModalController } from '@ionic/angular';
 
 
 @Component({
@@ -10,20 +11,23 @@ import { HttpClient } from "@angular/common/http";
 })
 export class TextToAslPage implements OnInit {
   inputValue: string = "";
-  
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService, private videoPlayer: VideoPlayer) { }
   submit(){
     console.log(this.inputValue);
-    this.dataService.getRemoteData().subscribe(data => {
+    this.dataService.getRemoteData(this.inputValue).subscribe(data => {
       console.log("Local Data:");
       console.log(data);
+      this.videoPlayer.play(data.toString()).then(() => {
+        console.log('video completed');
+      }).catch(err => {
+        console.log(err);
+      });
     })
-    
-
 
   }
   ngOnInit() {
 
   }
+
 
 }
