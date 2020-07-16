@@ -45,8 +45,7 @@ def translateString(string):
     raw = {
         'videos': videos
     }
-    final = json.dumps(raw)
-    return final
+    return raw
 
 # Entry point for the program
 # You can call it with a single argument, being the string you want to translate in quotes
