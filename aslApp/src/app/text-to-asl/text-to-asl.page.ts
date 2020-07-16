@@ -11,22 +11,19 @@ import { ModalController } from '@ionic/angular';
 })
 export class TextToAslPage implements OnInit {
   inputValue: string = "";
+  
   constructor(private dataService: DataService, private videoPlayer: VideoPlayer) { }
   submit(){
     console.log(this.inputValue);
     this.dataService.getRemoteData(this.inputValue).subscribe(data => {
       console.log("Local Data:");
-      console.log(data);
-      this.videoPlayer.play(data.toString()).then(() => {
-        console.log('video completed');
-      }).catch(err => {
-        console.log(err);
-      });
+      console.log(data['videos'][0]);
+      this.videoURL=data['videos'][0];
     })
 
   }
   ngOnInit() {
-
+    videoURL:string = "";
   }
 
 

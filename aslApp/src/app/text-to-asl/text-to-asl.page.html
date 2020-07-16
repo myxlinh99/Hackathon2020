@@ -11,6 +11,10 @@
   <ion-list style="text-align:center">
     <ion-input [(ngModel)]="inputValue" text-right placeholder="What's on your mind?" style="text-align:center" id='input'></ion-input>
     <ion-button color="medium" (click)="submit()">Translate</ion-button>
+    <video>
+      <source src='{{videoURL}}' type="video/mp4">
+    </video>
+
   </ion-list>
   <div>
     
